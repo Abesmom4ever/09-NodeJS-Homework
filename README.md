@@ -45,3 +45,5 @@ THEN user is taken to the corresponding section of the README
 ```
 
 ### Walkthrough Video
+
+https://user-images.githubusercontent.com/76074771/183812664-2888e8e3-9694-418e-9af2-dba64fd9cbab.mov
