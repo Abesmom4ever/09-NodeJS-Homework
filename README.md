@@ -35,3 +35,7 @@ THEN user is taken to the corresponding section of the README
 ```
 
 ### Walkthrough Video
+
+
+https://user-images.githubusercontent.com/76074771/183815215-8bfca3b3-49c1-49e1-9334-a8c95a7ee094.mp4
+
