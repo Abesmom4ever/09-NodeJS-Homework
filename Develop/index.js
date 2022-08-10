@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
-const chalk = require("chalk");
 const fs = require("fs");
-const { default: inquirer } = require("inquirer");
+const inquirer = require("inquirer");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -15,6 +14,7 @@ const questions = [
         name: "description",
         message: "What is your project all about?",
     },
+
     {
         type: "input",
         name: "installation",
@@ -22,40 +22,50 @@ const questions = [
     },
     {
         type: "input",
+        name: "UsageInformation",
+        message: "What is the use of your project?",
+    },
+    {
+        type: "input",
+        name: "ContributionGuidelines",
+        message: "Who contributed to the project?",
+    },
+    {
+        type: "input",
         name: "deployedLink",
         message: "What is the link to your deployed project?",
     },
+    {
+        type: "input",
+        name: "githubUser",
+        message: "What is your personal GitHub Link?",
+    },
 ];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 function createReadme(answers) {
     fs.writeFileSync(
         "./README.md",
-        `
-    # ${answers.title}
-    ## Description
-    ${answers.description}
-    ## Installation Instructions
-    ${answers.installation}
-    ## Deployed Link
-    [deployed link](${answers.deployedLink})
-    `,
+        `# ${answers.title}
+## Description
+${answers.description}
+## Installation Instructions
+${answers.installation}
+## Usage Information
+${answers.UsageInformation}
+## Contribution Guidelines
+${answers.ContributionsGuidelines}
+## Deployed Link
+[deployed link](${answers.deployedLink})
+## GitHub Link
+[GitHub Profile](${answers.githubUser})
+`,
     );
 }
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
 
 inquirer
     .prompt(questions)
     .then((answers) => {
         createReadme(answers);
-        console.log(chalk.green("successfully created README"));
     })
     .catch((error) => {
         if (error.isTtyError) {
